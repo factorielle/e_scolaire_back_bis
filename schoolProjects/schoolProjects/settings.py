@@ -108,6 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
 AUTH_USER_MODEL = 'StudentApp.User'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -145,3 +146,5 @@ CORS_ALLOW_ALL_HEADERS=True
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:4200',
 ]
+
+
