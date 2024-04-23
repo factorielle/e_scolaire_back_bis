@@ -28,11 +28,12 @@ class User(AbstractUser):
     nom = models.CharField(max_length=100)
     prenom = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
+    email_verified = models.BooleanField(default=False)
     telephone = models.CharField(max_length=20)
     adresse = models.CharField(max_length=255)
     profile_photo = models.ImageField(verbose_name='Photo de profil', default='https://www.freepik.com/premium-vector/african-american-man-face_2585211.htm#fromView=search&page=1&position=40&uuid=76e184f4-fc4d-4e05-81c9-737edda42205')
     role = models.CharField(max_length=10, choices=ROLE_CHOICES)
-
+    
     def save(self, *args, **kwargs):
         if self.password:
             self.set_password(self.password)  # hacher le mot de passe
